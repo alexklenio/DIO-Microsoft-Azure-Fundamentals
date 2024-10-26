@@ -4,11 +4,6 @@
     <span> Formação Microsoft Azure Essentials</span>
 </h1>
 
-
-# Autorização de Uso
-### 1. Salve uma cópia e utilize os modelos para desenvolver suas respostas!
-<a href="https://github.com//alexklenio/DIO-Microsoft-Azure-Fundamentals/fork">
-    <img alt="Folk" title="Fork Button" src="https://shields.io/badge/-DAR%20FORK-red.svg?&style=for-the-badge&logo=github&logoColor=white"/></a>
    
 ## Detalhes da formação
  <img align="right" src="https://assets.dio.me/bbJOCwj9F9ERdxC8F1x1Lm_XFkcPWwCHdshI-njcbUA/f:webp/h:120/q:80/L3RyYWNrcy83M2IyZGU1NS1kNjdhLTRkY2MtOGJlYS00YTE2ZDBjNGQzMGMucG5n" width="200"/>
@@ -31,9 +26,7 @@ Desafio de Projeto: Construa o seu portfólio construindo projetos práticos com
 
 Ranking: Cada bootcamp possui um ranking com premiações exclusivas, onde você pontua de acordo com as interações que você realiza em Fórum e Rooms, dos acertos que você tem em questionários e da qualidade do código que você desenvolveu nos desafios.
 
-
 ### Repositório destinado às entregas dos desafios de projeto da formação.
-
 
 <div align="center">
   <p>
