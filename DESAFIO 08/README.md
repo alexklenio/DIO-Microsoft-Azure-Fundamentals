@@ -3,11 +3,11 @@
      <img align="center" width="60px" src="https://assets.dio.me/Mo-tlP263KBZIWFaCvplHdmnL4GSLIITz5tzmMUoX7s/f:webp/h:77/q:80/w:77/L2xhYl9wcm9qZWN0cy9iYWRnZXMvY2E0NTA1ZmYtNTI2YS00ZGZkLWI3ZTAtZDhhZTEwMDdiNTRjLnBuZw"></a>
     <span> 
 Microsoft Azure - 
-Entendendo sobre Segurança e Identidade na Azure</span>
+Otimizando Custos no Azure</span>
 </h1>
 
 Repositório desenvolvido para fins didáticos, com a disponibilização de materiais de apoio para o lab **Microsoft Azure - 
-Entendendo sobre Segurança e Identidade na Azure** da [Digital Innovation One](https://www.dio.me/).
+Otimizando Custos no Azure** da [Digital Innovation One](https://www.dio.me/).
 
 [![Link do Lab](https://img.shields.io/badge/▶-000?style=for-the-badge&logo=movie&logoColor=E94D5F)](https://web.dio.me/lab/identidade-acesso-e-seguranca-laboratorio/learning/d4d096b1-f66e-48f2-8a68-32bd50aa4028) 
 [![Link do Lab](https://img.shields.io/badge/Acesse%20o%20Lab%20na%20Plataforma-E94D5F?style=for-the-badge)](https://web.dio.me/lab/identidade-acesso-e-seguranca-laboratorio/learning/d4d096b1-f66e-48f2-8a68-32bd50aa4028)
@@ -17,127 +17,91 @@ Como resolução do Lab7, módulo 2, repasso um resumo de tudo visto, aprendido 
    
 ## Resposta do Lab
 
-## 1. Introdução 🌟
+O gerenciamento eficaz de custos no Azure é fundamental para maximizar o valor dos serviços em nuvem enquanto se mantém dentro do orçamento. Este guia abrangente fornece insights sobre as melhores práticas, ferramentas e estratégias para otimizar seus gastos no Azure.
 
-A segurança e o gerenciamento de identidade são pilares fundamentais na plataforma Azure. Este guia abrangente oferece uma visão detalhada dos principais conceitos, ferramentas e práticas recomendadas para proteger seus recursos e dados na nuvem da Microsoft.
+---
 
-## 2. Microsoft Entra ID (anteriormente Azure Active Directory) 🔑
+## 1. Compreendendo o TCO (Total Cost of Ownership) 📊
 
-O Microsoft Entra ID é o coração do gerenciamento de identidade e acesso no Azure.
+O TCO é crucial para entender o custo real de migrar para a nuvem. A Calculadora de TCO do Azure é uma ferramenta valiosa nesse processo:
 
-### 2.1 Configuração Básica
+1. Acesse a [Calculadora de TCO do Azure](https://azure.microsoft.com/en-us/pricing/tco/calculator/).
+2. Configure seu cenário atual, incluindo servidores, armazenamento e rede.
+3. Configure o cenário equivalente no Azure.
+4. Compare os custos para tomar decisões informadas sobre a migração.
+---
 
-- Acesse o portal do Azure (https://portal.azure.com)
-- Procure por "Microsoft Entra ID" na barra de pesquisa
-- Explore a visão geral do serviço
+## 2. Ferramentas de Gerenciamento de Custos no Azure 🛠️
 
-### 2.2 Gerenciamento de Usuários e Grupos
+### 2.1 Azure Cost Management + Billing
 
-- **Adicionar Usuários**: 
-  - Navegue até "Usuários" > "Novo usuário"
-  - Preencha os detalhes necessários
-- **Criar Grupos**: 
-  - Acesse "Grupos" > "Novo grupo"
-  - Defina o tipo de grupo e atribua membros
-- **Atribuir Funções**: Utilize o RBAC (Controle de Acesso Baseado em Funções) para atribuir permissões específicas
+Esta ferramenta é essencial para monitorar, analisar e otimizar seus custos no Azure:
 
-### 2.3 Autenticação Multifator (MFA)
+- **Visão Geral de Custos**: Fornece relatórios detalhados sobre o uso e custos dos serviços.
+- **Análise de Custo**: Explore e visualize seus gastos em diferentes períodos e recursos.
+- **Orçamentos e Alertas**: Configure limites de gastos e receba notificações quando atingir esses limites. 
 
-- Ative o MFA para aumentar a segurança das contas
-- Configure no painel "Segurança" > "Autenticação multifator"
-- Defina políticas de MFA para usuários ou grupos específicos
+### 2.2 Azure Advisor
 
-## 3. Controle de Acesso e Políticas 🔒
+Oferece recomendações personalizadas para otimizar custos, incluindo:
+- Sugestões para redimensionamento de VMs
+- Identificação de recursos ociosos
+- Recomendações para reservas de instâncias
+  
+---
 
-### 3.1 RBAC (Controle de Acesso Baseado em Funções)
+## 3. Estratégias de Otimização de Custos 💡
 
-- Acesse o recurso desejado > "Controle de Acesso (IAM)"
-- Clique em "Atribuir função" e selecione a função apropriada (ex: Colaborador, Leitor, Proprietário)
-- Atribua a função a usuários ou grupos
+### 3.1 Seleção Adequada de Recursos
 
-### 3.2 Azure Policy
+- **Escolha o Tamanho Correto de VM**: Utilize VMs que atendam às suas necessidades sem excessos.
+- **Use VMs de Baixo Custo**: Considere séries B para cargas de trabalho que não necessitam de desempenho constante.
+- **Dimensionamento Automático**: Configure o auto-scaling para ajustar recursos conforme a demanda.
 
-- Busque por "Política" no portal Azure
-- Crie políticas para definir restrições ou requisitos de segurança
-- Aplique políticas em diferentes níveis: assinatura, grupo de recursos ou recurso individual
+### 3.2 Otimização de Armazenamento
 
-### 3.3 Acesso Condicional
+- **Camadas de Armazenamento**: Utilize Hot para dados acessados frequentemente, Cool para acesso menos frequente, e Archive para dados raramente acessados.
+- **Lifecycle Management**: Automatize a movimentação de dados entre camadas e a exclusão de dados antigos.
 
-- Configure no Microsoft Entra ID > "Segurança" > "Acesso condicional"
-- Defina condições específicas para acesso a recursos (ex: localização, dispositivo, risco)
+### 3.3 Instâncias Reservadas e Benefícios Híbridos
 
-## 4. Proteção de Dados 🔐
+- **Instâncias Reservadas**: Obtenha descontos significativos com compromissos de 1 ou 3 anos.
+- **Azure Hybrid Benefit**: Utilize licenças existentes de Windows Server e SQL Server para reduzir custos.
 
-### 4.1 Criptografia
+### 3.4 Gerenciamento de Recursos Ociosos
 
-- **Em Repouso**: Ative a criptografia automática para dados armazenados
-- **Em Trânsito**: Utilize HTTPS, SSL/TLS ou IPsec para comunicações seguras
+- **Automação de Desligamento**: Use Azure Automation para desligar VMs em períodos ociosos.
+- **Revisão Regular**: Identifique e elimine recursos não utilizados.
 
-### 4.2 Azure Key Vault
+### 3.5 Otimização de Rede
 
-- Crie um novo Key Vault no portal Azure
-- Armazene e gerencie chaves de criptografia, segredos e certificados
-- Defina políticas de acesso para controlar quem pode acessar os segredos
+- **Minimize Tráfego Entre Regiões**: Mantenha serviços na mesma região quando possível.
+- **Use CDN ou Azure Front Door**: Otimize a entrega de conteúdo e reduza custos de transferência de dados.
 
-## 5. Segurança de Rede 🌐
+---
 
-### 5.1 Grupos de Segurança de Rede (NSG)
+## 4. Monitoramento e Controle Contínuo 👀
 
-- Acesse a VM ou Rede Virtual > "Grupos de Segurança de Rede"
-- Defina regras de entrada e saída, especificando portas, IPs e protocolos permitidos/bloqueados
+### 4.1 Configuração de Alertas
 
-### 5.2 Azure Firewall
+Como mostrado na terceira imagem, configure alertas de orçamento para ser notificado quando os gastos se aproximarem dos limites definidos.
 
-- Implemente o Azure Firewall para proteção adicional
-- Configure regras de filtragem de tráfego entre redes ou com a internet
+### 4.2 Uso de Tags
 
-## 6. Microsoft Defender for Cloud 🛡️
+Aplique tags aos recursos para categorizar e rastrear custos por departamento, projeto ou ambiente. Isso facilita a alocação precisa de custos entre diferentes unidades de negócios.
 
-### 6.1 Configuração Inicial
+### 4.3 Revisões Periódicas
 
-- No portal Azure, busque por "Microsoft Defender for Cloud"
-- Explore a visão geral e as principais funcionalidades
+Realize análises regulares dos seus recursos e gastos. Utilize o Azure Advisor para obter insights sobre possíveis otimizações.
 
-### 6.2 Monitoramento de Segurança
+---
 
-- Utilize o painel para uma visão unificada da postura de segurança
-- Identifique vulnerabilidades e riscos em seus recursos
+## 5. Considerações Finais 🎯
 
-### 6.3 Gerenciamento de Incidentes
+A otimização de custos no Azure é um processo contínuo que requer atenção constante e ajustes. Ao implementar estas práticas e utilizar as ferramentas disponíveis, você pode significativamente reduzir seus gastos na nuvem sem comprometer a performance ou a segurança.
 
-- Configure alertas para atividades suspeitas
-- Responda a incidentes de segurança com recomendações práticas
+Lembre-se de que o cenário de custos no Azure é dinâmico, como ilustrado na segunda imagem, onde vemos uma mudança significativa na distribuição de custos entre o ambiente local e o Azure. No Azure, a computação representa 83% dos custos, enquanto o data center e a rede têm seus custos reduzidos ou eliminados.
 
-### 6.4 Avaliação de Conformidade
-
-- Avalie a conformidade com políticas e regulamentos de segurança
-- Gere relatórios detalhados para auditorias
-
-## 7. Monitoramento e Auditoria 📊
-
-### 7.1 Azure Monitor
-
-- Configure diagnósticos para rastrear atividades de acesso e login
-- Utilize o Log Analytics para análise aprofundada de logs
-
-### 7.2 Revisões Regulares
-
-- Realize auditorias periódicas de permissões e acessos
-- Revise logs regularmente para identificar comportamentos suspeitos
-
-## 8. Práticas Recomendadas e Considerações Finais 🌟
-
-- Adote uma abordagem de Segurança Zero Trust
-- Mantenha-se atualizado com as últimas ameaças e atualizações de segurança
-- Implemente um plano de resposta a incidentes
-- Realize treinamentos regulares de conscientização de segurança para sua equipe
-
-## 9. Recursos Adicionais 📚
-
-- [Documentação oficial do Azure](https://docs.microsoft.com/azure/security/)
-- [Centro de Confiança da Microsoft](https://www.microsoft.com/trust-center)
-- [Blog de Segurança do Azure](https://azure.microsoft.com/blog/topics/security/)
-
-Ao seguir este guia abrangente, você estará bem equipado para implementar uma estratégia robusta de segurança e identidade no Azure, protegendo seus recursos e dados críticos na nuvem. Lembre-se de que a segurança é um processo contínuo, então mantenha-se vigilante e atualize suas práticas regularmente.
+Ao seguir este guia e manter-se atualizado com as últimas ofertas e ferramentas do Azure, você estará bem posicionado para otimizar seus investimentos em nuvem e maximizar o retorno sobre o investimento (ROI) de sua infraestrutura de TI.
 
 ⭐ Obrigado por chegar até aqui e sintas-e a vontade para contribuir e deixar uma estrelinha! (**star**) 
