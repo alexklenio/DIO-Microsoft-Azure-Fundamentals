@@ -3,105 +3,151 @@
      <img align="center" width="60px" src="https://assets.dio.me/Mo-tlP263KBZIWFaCvplHdmnL4GSLIITz5tzmMUoX7s/f:webp/h:77/q:80/w:77/L2xhYl9wcm9qZWN0cy9iYWRnZXMvY2E0NTA1ZmYtNTI2YS00ZGZkLWI3ZTAtZDhhZTEwMDdiNTRjLnBuZw"></a>
     <span> 
 Microsoft Azure - 
-Otimizando Custos no Azure</span>
+Blueprints, Políticas e Bloqueios de Recurso</span>
 </h1>
 
 Repositório desenvolvido para fins didáticos, com a disponibilização de materiais de apoio para o lab **Microsoft Azure - 
-Otimizando Custos no Azure** da [Digital Innovation One](https://www.dio.me/).
+Blueprints, Políticas e Bloqueios de Recurso** da [Digital Innovation One](https://www.dio.me/).
 
-[![Link do Lab](https://img.shields.io/badge/▶-000?style=for-the-badge&logo=movie&logoColor=E94D5F)](https://web.dio.me/lab/identidade-acesso-e-seguranca-laboratorio/learning/d4d096b1-f66e-48f2-8a68-32bd50aa4028) 
-[![Link do Lab](https://img.shields.io/badge/Acesse%20o%20Lab%20na%20Plataforma-E94D5F?style=for-the-badge)](https://web.dio.me/lab/identidade-acesso-e-seguranca-laboratorio/learning/d4d096b1-f66e-48f2-8a68-32bd50aa4028)
+[![Link do Lab](https://img.shields.io/badge/▶-000?style=for-the-badge&logo=movie&logoColor=E94D5F)](https://web.dio.me/project/governanca-e-conformidade-laboratorio/learning/0cd4c089-d980-4bba-bca6-1c291319318b?back=/track/microsoft-azure-essentials) 
+[![Link do Lab](https://img.shields.io/badge/Acesse%20o%20Lab%20na%20Plataforma-E94D5F?style=for-the-badge)](https://web.dio.me/project/governanca-e-conformidade-laboratorio/learning/0cd4c089-d980-4bba-bca6-1c291319318b?back=/track/microsoft-azure-essentials)
 
 ## Objetivo
-Como resolução do Lab8, módulo 2, repasso um resumo de tudo visto, aprendido e discutido no módulo
+Como resolução do Lab9, módulo 3, repasso um resumo de tudo visto, aprendido e discutido no módulo
    
 ## Resposta do Lab
 
-O gerenciamento eficaz de custos no Azure é fundamental para maximizar o valor dos serviços em nuvem enquanto se mantém dentro do orçamento. Este guia abrangente fornece insights sobre as melhores práticas, ferramentas e estratégias para otimizar seus gastos no Azure.
+O gerenciamento eficaz de políticas de acesso no Azure é fundamental para manter a segurança e conformidade em sua organização. Este guia abrangente fornece uma visão detalhada sobre como definir, implementar e gerenciar políticas de acesso no Azure, garantindo que seus recursos sejam utilizados de maneira segura e alinhada com as melhores práticas do setor.
 
 ---
 
-## 1. Compreendendo o TCO (Total Cost of Ownership) 📊
+## 1. Princípios Fundamentais de Controle de Acesso 🛡️
 
-O TCO é crucial para entender o custo real de migrar para a nuvem. A Calculadora de TCO do Azure é uma ferramenta valiosa nesse processo:
+O controle de acesso no Azure baseia-se em três princípios essenciais:
 
-1. Acesse a [Calculadora de TCO do Azure](https://azure.microsoft.com/en-us/pricing/tco/calculator/).
-2. Configure seu cenário atual, incluindo servidores, armazenamento e rede.
-3. Configure o cenário equivalente no Azure.
-4. Compare os custos para tomar decisões informadas sobre a migração.
----
-
-## 2. Ferramentas de Gerenciamento de Custos no Azure 🛠️
-
-### 2.1 Azure Cost Management + Billing
-
-Esta ferramenta é essencial para monitorar, analisar e otimizar seus custos no Azure:
-
-- **Visão Geral de Custos**: Fornece relatórios detalhados sobre o uso e custos dos serviços.
-- **Análise de Custo**: Explore e visualize seus gastos em diferentes períodos e recursos.
-- **Orçamentos e Alertas**: Configure limites de gastos e receba notificações quando atingir esses limites. 
-
-### 2.2 Azure Advisor
-
-Oferece recomendações personalizadas para otimizar custos, incluindo:
-- Sugestões para redimensionamento de VMs
-- Identificação de recursos ociosos
-- Recomendações para reservas de instâncias
-  
----
-
-## 3. Estratégias de Otimização de Custos 💡
-
-### 3.1 Seleção Adequada de Recursos
-
-- **Escolha o Tamanho Correto de VM**: Utilize VMs que atendam às suas necessidades sem excessos.
-- **Use VMs de Baixo Custo**: Considere séries B para cargas de trabalho que não necessitam de desempenho constante.
-- **Dimensionamento Automático**: Configure o auto-scaling para ajustar recursos conforme a demanda.
-
-### 3.2 Otimização de Armazenamento
-
-- **Camadas de Armazenamento**: Utilize Hot para dados acessados frequentemente, Cool para acesso menos frequente, e Archive para dados raramente acessados.
-- **Lifecycle Management**: Automatize a movimentação de dados entre camadas e a exclusão de dados antigos.
-
-### 3.3 Instâncias Reservadas e Benefícios Híbridos
-
-- **Instâncias Reservadas**: Obtenha descontos significativos com compromissos de 1 ou 3 anos.
-- **Azure Hybrid Benefit**: Utilize licenças existentes de Windows Server e SQL Server para reduzir custos.
-
-### 3.4 Gerenciamento de Recursos Ociosos
-
-- **Automação de Desligamento**: Use Azure Automation para desligar VMs em períodos ociosos.
-- **Revisão Regular**: Identifique e elimine recursos não utilizados.
-
-### 3.5 Otimização de Rede
-
-- **Minimize Tráfego Entre Regiões**: Mantenha serviços na mesma região quando possível.
-- **Use CDN ou Azure Front Door**: Otimize a entrega de conteúdo e reduza custos de transferência de dados.
+1. **Princípio do Menor Privilégio**: Conceda apenas as permissões estritamente necessárias para que os usuários executem suas funções.
+2. **Identidade e Acesso**: Gerencie identidades através do Azure Active Directory (AAD) para controlar o acesso a recursos de forma centralizada.
+3. **Funções e Grupos**: Utilize funções (Roles) para agrupar permissões e atribua-as a usuários ou grupos, simplificando o gerenciamento de acesso.
 
 ---
 
-## 4. Monitoramento e Controle Contínuo 👀
+## 2. Controle de Acesso Baseado em Funções (RBAC) 🔑
 
-### 4.1 Configuração de Alertas
+O RBAC é o modelo principal de gerenciamento de permissões no Azure. Ele permite atribuir funções específicas a usuários, grupos ou aplicativos, restringindo ou concedendo permissões de forma granular.
 
-Como mostrado na terceira imagem, configure alertas de orçamento para ser notificado quando os gastos se aproximarem dos limites definidos.
+### 2.1 Funções Comuns no RBAC:
+- **Owner**: Acesso total para gerenciar recursos e atribuir permissões.
+- **Contributor**: Pode criar e gerenciar recursos, mas não alterar permissões.
+- **Reader**: Pode visualizar recursos, mas não modificá-los.
 
-### 4.2 Uso de Tags
-
-Aplique tags aos recursos para categorizar e rastrear custos por departamento, projeto ou ambiente. Isso facilita a alocação precisa de custos entre diferentes unidades de negócios.
-
-### 4.3 Revisões Periódicas
-
-Realize análises regulares dos seus recursos e gastos. Utilize o Azure Advisor para obter insights sobre possíveis otimizações.
+### 2.2 Atribuindo Funções:
+1. No portal do Azure, navegue até o recurso ou grupo de recursos desejado.
+2. Clique em "Controle de Acesso (IAM)".
+3. Selecione "Adicionar Atribuição de Função".
+4. Escolha a função apropriada e selecione o usuário ou grupo.
+5. Confirme a atribuição clicando em "Salvar".
 
 ---
 
-## 5. Considerações Finais 🎯
+## 3. Definição e Implementação de Políticas 📋
 
-A otimização de custos no Azure é um processo contínuo que requer atenção constante e ajustes. Ao implementar estas práticas e utilizar as ferramentas disponíveis, você pode significativamente reduzir seus gastos na nuvem sem comprometer a performance ou a segurança.
+As políticas no Azure ajudam a impor regras e garantir a conformidade em toda a organização.
 
-Lembre-se de que o cenário de custos no Azure é dinâmico, como ilustrado na segunda imagem, onde vemos uma mudança significativa na distribuição de custos entre o ambiente local e o Azure. No Azure, a computação representa 83% dos custos, enquanto o data center e a rede têm seus custos reduzidos ou eliminados.
+### 3.1 Tipos de Políticas:
+- **Políticas de Segurança**: Definem normas de segurança para o acesso e uso dos recursos.
+- **Políticas de Conformidade**: Garantem que os recursos e seus acessos estejam de acordo com as regulamentações e padrões da empresa.
 
-Ao seguir este guia e manter-se atualizado com as últimas ofertas e ferramentas do Azure, você estará bem posicionado para otimizar seus investimentos em nuvem e maximizar o retorno sobre o investimento (ROI) de sua infraestrutura de TI.
+### 3.2 Criando e Implementando Políticas:
+1. No portal do Azure, procure por "Políticas".
+2. Clique em "Atribuições de Política".
+3. Selecione "Atribuir Política" e escolha o escopo desejado.
+4. Defina os parâmetros da política e clique em "Revisar e Criar".
+
+---
+
+## 4. Azure Active Directory (Azure AD) 👥
+
+O Azure AD é o serviço de gerenciamento de identidade e acesso do Azure, permitindo controlar quem tem acesso a quais recursos.
+
+### 4.1 Gerenciando Usuários e Grupos:
+1. No portal do Azure, vá para "Azure Active Directory".
+2. Para adicionar usuários, selecione "Usuários" > "Novo Usuário".
+3. Para criar grupos, vá para "Grupos" e crie um novo grupo para organizar usuários com permissões semelhantes.
+
+---
+
+## 5. Políticas de Condição de Acesso 🔒
+
+As políticas de condição de acesso permitem aplicar regras específicas baseadas em condições como localização, dispositivo ou aplicativo utilizado.
+
+### 5.1 Configurando Políticas de Condição de Acesso:
+1. No Azure AD, vá para "Segurança" > "Condições de Acesso".
+2. Crie uma nova política clicando em "Nova Política".
+3. Defina os usuários, grupos e condições aplicáveis.
+4. Configure os controles de acesso, como exigir autenticação multifator (MFA).
+5. Salve e ative a política.
+
+---
+
+## 6. Monitoramento, Auditoria e Logs 📊
+
+O Azure oferece ferramentas robustas para monitorar e auditar atividades de acesso e alterações em políticas de segurança.
+
+### 6.1 Utilizando Azure Monitor e Logs de Auditoria:
+1. No portal do Azure, acesse "Monitor" > "Logs de Auditoria".
+2. Visualize atividades relacionadas a acessos e permissões.
+3. Configure alertas para eventos específicos, como atribuição de funções críticas.
+
+---
+
+## 7. Portal de Confiança do Azure 🏛️
+
+O Portal de Confiança do Azure oferece visibilidade e controle sobre a conformidade e segurança dos recursos no Azure.
+
+### 7.1 Acessando o Portal de Confiança:
+1. Faça login no [Portal de Confiança do Azure](https://servicetrust.microsoft.com/).
+2. Explore informações sobre certificações, conformidade e práticas recomendadas.
+
+---
+
+## 8. Preview do Azure 🚀
+
+O Preview do Azure permite experimentar novos serviços e funcionalidades antes do lançamento oficial.
+
+### 8.1 Ativando Recursos em Preview:
+1. No portal do Azure, vá para "Todos os serviços".
+2. Procure por recursos em Preview e siga as instruções para ativá-los.
+
+---
+
+## 9. Bloqueio de Recursos 🔐
+
+O Bloqueio de Recursos impede a exclusão ou modificação acidental de recursos críticos.
+
+### 9.1 Configurando Bloqueios:
+1. No portal do Azure, selecione o recurso desejado.
+2. Vá para "Bloqueios" e clique em "Adicionar bloqueio".
+3. Escolha entre "ReadOnly" ou "CanNotDelete".
+4. Defina um nome e descrição para o bloqueio.
+
+---
+
+## 10. Boas Práticas 👍
+
+1. **Revisão Regular**: Revise políticas e atribuições de acesso periodicamente.
+2. **Documentação**: Mantenha uma documentação detalhada de todas as políticas implementadas.
+3. **Treinamento**: Certifique-se de que os administradores e usuários estejam atualizados sobre as políticas de segurança.
+4. **Privilégio Mínimo**: Aplique o princípio do privilégio mínimo ao atribuir acessos.
+5. **Monitoramento Contínuo**: Utilize ferramentas de monitoramento para identificar e responder a anomalias rapidamente.
+
+---
+
+## 11. Recursos Adicionais 📚
+
+- [Documentação Oficial do Azure sobre Políticas](https://docs.microsoft.com/azure/governance/policy/overview)
+- [Tutorial de Implementação de Políticas](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Azure Policy Samples](https://docs.microsoft.com/azure/governance/policy/samples/)
+
+Ao seguir este guia abrangente, você estará bem equipado para gerenciar eficazmente as políticas de acesso no Azure, garantindo a segurança e conformidade de sua infraestrutura na nuvem.
 
 ⭐ Obrigado por chegar até aqui e sintas-e a vontade para contribuir e deixar uma estrelinha! (**star**) 
