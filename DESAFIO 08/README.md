@@ -13,7 +13,7 @@ Otimizando Custos no Azure** da [Digital Innovation One](https://www.dio.me/).
 [![Link do Lab](https://img.shields.io/badge/Acesse%20o%20Lab%20na%20Plataforma-E94D5F?style=for-the-badge)](https://web.dio.me/lab/identidade-acesso-e-seguranca-laboratorio/learning/d4d096b1-f66e-48f2-8a68-32bd50aa4028)
 
 ## Objetivo
-Como resolução do Lab7, módulo 2, repasso um resumo de tudo visto, aprendido e discutido no módulo
+Como resolução do Lab8, módulo 2, repasso um resumo de tudo visto, aprendido e discutido no módulo
    
 ## Resposta do Lab
 
